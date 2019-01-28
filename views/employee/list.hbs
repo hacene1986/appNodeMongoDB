@@ -1,0 +1,26 @@
+<h3><a href="/employee" class="btn btn-secondary"><i class="fas fa-plus"></i>Create New</a>Employee list</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+        <th>Full Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>City</th>
+        <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.fullName}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.mobile}}</td>
+            <td>{{this.city}}</td>
+            <td>
+                <a href="/employee/{{this._id}}"><i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
+                <a href="/employee/delete/{{this._id}}" onclick="return confirm('Vous etes sur de suppression ?');"><i class="fas fa-trash-alt" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
